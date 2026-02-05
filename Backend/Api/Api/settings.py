@@ -1,3 +1,5 @@
+
+
 """
 Django settings for Api project.
 
@@ -12,7 +14,7 @@ https://docs.djangoproject.com/en/6.0/ref/settings/
 
 from decouple import  config
 from pathlib import Path
-
+ 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -23,7 +25,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = config('SECRET_KEY')
 
-# SECURITY WARNING: don't run with debug turned on in production!
+# SECURITY WARNING: don't run with debug turned on in production!  
 DEBUG = True
 
 ALLOWED_HOSTS = []
@@ -64,14 +66,14 @@ TEMPLATES = [
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
-                'django.template.context_processors.request',
+                'django.template.context_processors.request', 
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
             ],
         },
     },
 ]
-
+ 
 WSGI_APPLICATION = 'Api.wsgi.application'
 
 
@@ -80,17 +82,6 @@ WSGI_APPLICATION = 'Api.wsgi.application'
 
 from decouple import config
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': config('DB_NAME'),
-        'USER': config('DB_USER'),
-        'PASSWORD': config('DB_PASSWORD'),
-        'HOST': config('DB_HOST'),
-        'PORT': config('DB_PORT', cast=int),
-        'CONN_MAX_AGE': 600,  # keeps connections open for 10 minutes
-    }
-}
 
 
 
